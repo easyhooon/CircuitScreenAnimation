@@ -1,5 +1,6 @@
 package com.easyhooon.circuitscreenanimation.di
 
+import com.easyhooon.circuitscreenanimation.CrossFadeNavDecoratorFactory
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.runtime.presenter.Presenter
 import com.slack.circuit.runtime.ui.Ui
@@ -28,6 +29,7 @@ abstract class CircuitModule {
         ): Circuit = Circuit.Builder()
             .addPresenterFactories(presenterFactories)
             .addUiFactories(uiFactories)
+            .setAnimatedNavDecoratorFactory(CrossFadeNavDecoratorFactory())
             .build()
     }
 }

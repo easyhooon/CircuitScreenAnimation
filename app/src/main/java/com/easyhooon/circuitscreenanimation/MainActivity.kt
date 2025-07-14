@@ -4,9 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -39,17 +36,13 @@ class MainActivity : ComponentActivity() {
                 val backStack = rememberSaveableBackStack(root = ListScreen)
                 val navigator = rememberCircuitNavigator(backStack)
 
+                val currentScreen = backStack.topRecord?.screen
+                val shouldShowBottomBar = currentScreen is ListScreen || currentScreen is FavoritesScreen
+
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     bottomBar = {
-                        val currentScreen = backStack.topRecord?.screen
-                        val shouldShowBottomBar = currentScreen is ListScreen || currentScreen is FavoritesScreen
-
-                        AnimatedVisibility(
-                            visible = shouldShowBottomBar,
-                            enter = slideInVertically(initialOffsetY = { it }),
-                            exit = slideOutVertically(targetOffsetY = { it })
-                        ) {
+                        if (shouldShowBottomBar) {
                             NavigationBar(modifier = Modifier.fillMaxWidth()) {
                                 NavigationBarItem(
                                     modifier = Modifier.weight(1f),
