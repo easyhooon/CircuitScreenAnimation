@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CricuitScreenAnimation</string>
+    <string name="list_label">List</string>
+    <string name="favorites_label">Favorites</string>
 </resources>

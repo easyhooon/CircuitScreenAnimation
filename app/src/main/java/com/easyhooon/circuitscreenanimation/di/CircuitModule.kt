@@ -1,6 +1,6 @@
 package com.easyhooon.circuitscreenanimation.di
 
-import com.easyhooon.circuitscreenanimation.CrossFadeNavDecoratorFactory
+import com.easyhooon.circuitscreenanimation.utils.CrossFadeNavDecoratorFactory
 import com.slack.circuit.foundation.Circuit
 import com.slack.circuit.runtime.presenter.Presenter
 import com.slack.circuit.runtime.ui.Ui

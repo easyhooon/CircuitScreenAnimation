@@ -3,18 +3,21 @@ package com.easyhooon.circuitscreenanimation
 import com.slack.circuit.runtime.screen.Screen
 import kotlinx.parcelize.Parcelize
 
-abstract class PokedexScreen(val name: String) : Screen {
+abstract class CircuitScreen(val name: String) : Screen {
     override fun toString(): String = name
 }
 
 @Parcelize
-data object ListScreen : PokedexScreen(name = "List()")
+data object BottomNavigationScreen : CircuitScreen(name = "Home()")
 
 @Parcelize
-data object ListDetailScreen : PokedexScreen(name = "ListDetail()")
+data object ListScreen : CircuitScreen(name = "List()")
 
 @Parcelize
-data object FavoritesScreen : PokedexScreen(name = "Favorites()")
+data object ListDetailScreen : CircuitScreen(name = "ListDetail()")
 
 @Parcelize
-data object FavoritesDetailScreen : PokedexScreen(name = "FavoritesDetail()")
+data object FavoritesScreen : CircuitScreen(name = "Favorites()")
+
+@Parcelize
+data object FavoritesDetailScreen : CircuitScreen(name = "FavoritesDetail()")

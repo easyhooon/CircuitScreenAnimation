@@ -1,4 +1,4 @@
-package com.easyhooon.circuitscreenanimation
+package com.easyhooon.circuitscreenanimation.utils
 
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.ContentTransform
